@@ -1,0 +1,19 @@
+# Detection d'anomalies - Autoencoder convolutionnel (AE) ou variationnel (VAE)
+
+model: ae_conv           # ae_conv | vae_conv
+latent_dim: 128          # dimension de l'espace latent
+beta: 1.0                # ponderaion KL pour VAE (1.0 = standard, >1 = beta-VAE)
+
+# Architecture : 4 blocs Conv(stride=2), 32->64->128->256 canaux
+base_channels: 32
+
+# Entraine uniquement sur les images sans pathologie (labels all-zero)
+train_on_normal_only: true
+
+optimizer: adam
+lr: 1.0e-3
+max_epochs: 30
+patience: 7
+
+# Seuil = percentile 95 de l'erreur de reconstruction sur le val set normal
+anomaly_threshold_percentile: 95

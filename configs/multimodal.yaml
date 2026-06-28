@@ -1,0 +1,23 @@
+# Composante multimodale - OpenI (Indiana University CXR)
+# Compare 3 modes : image_only | text_only | fusion (late fusion)
+
+openi_dir: data/    # contient indiana_reports.csv, indiana_projections.csv, images/
+
+# Encodeur texte : tfidf_mlp (leger, CPU) ou bioclinicalbert (lourd, GPU)
+text_encoder: tfidf_mlp
+tfidf_max_features: 5000
+mlp_hidden_dim: 256
+
+# Strategie de fusion
+fusion_strategy: late    # early | late | intermediate
+fusion_hidden_dim: 128
+
+# Entrainement
+optimizer: adamw
+lr: 1.0e-3
+weight_decay: 1.0e-4
+scheduler: cosine
+max_epochs: 5
+patience: 3
+
+loss: bce_weighted

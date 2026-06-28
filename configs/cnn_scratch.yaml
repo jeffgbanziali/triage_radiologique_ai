@@ -1,0 +1,21 @@
+# CNN entraine depuis zero - baseline sans transfer learning
+
+model: cnn_from_scratch
+
+# Architecture : 4 blocs Conv-BN-ReLU-MaxPool + tete FC
+num_conv_blocks: 4
+base_channels: 32        # canaux : 32->64->128->256
+kernel_size: 3
+padding: 1
+dropout: 0.5
+
+# Entrainement
+optimizer: adamw
+lr: 1.0e-3
+weight_decay: 1.0e-4
+scheduler: cosine
+max_epochs: 5
+patience: 3
+
+# Loss
+loss: bce_weighted

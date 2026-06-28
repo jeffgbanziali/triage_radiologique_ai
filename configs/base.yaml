@@ -1,0 +1,41 @@
+batch_size: 16
+best_artifact_keys:
+  anomaly: model_ae_conv
+  classification: model_vit
+best_run_ids:
+  anomaly: 1622001c85c5481bb710e918744ab2dc
+  classification: 6706f2f0cd5d4ad2abb63ea419ab5c25
+  multimodal: 625f73aa4ca74235a2bff478741fd3b7
+data_dir: data/
+device: cpu
+label_names:
+- Atelectasis
+- Cardiomegaly
+- Effusion
+- Infiltration
+- Mass
+- Nodule
+- Pneumonia
+- Pneumothorax
+- Consolidation
+- Edema
+- Emphysema
+- Fibrosis
+- Pleural_Thickening
+- Hernia
+mlflow_experiment_prefix: triage-radiologique
+normalize_mean:
+- 0.485
+- 0.456
+- 0.406
+normalize_std:
+- 0.229
+- 0.224
+- 0.225
+num_classes: 14
+num_workers: 0
+processed_dir: data/processed/
+raw_dir: data/raw/
+resolution: 64
+seed: 42
+splits_dir: data/splits/

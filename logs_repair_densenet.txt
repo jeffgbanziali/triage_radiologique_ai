@@ -1,0 +1,38 @@
+﻿python.exe : 2026/06/27 10:14:20 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+Au caractère Ligne:5 : 1
++ & $python scripts/repair_densenet_mlflow.py 2>&1 | Out-File -FilePath ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (2026/06/27 10:1...`name` instead.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+2026/06/27 10:14:20 WARNING mlflow.pytorch: Saving pytorch model by Pickle or CloudPickle format requires exercising 
+caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during 
+deserialization. The recommended safe alternative is to set `serialization_format` to 'pt2' to save the PyTorch model 
+using the safe graph model format.
+2026/06/27 10:14:21 WARNING mlflow.utils.requirements_utils: Found torch version (2.12.1+cpu) contains a local version 
+label (+cpu). MLflow logged a pip requirement for this package as 'torch==2.12.1' without the local version label to 
+make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or 
+`pip_requirements`.
+2026/06/27 10:14:42 WARNING mlflow.utils.requirements_utils: Found torchvision version (0.27.1+cpu) contains a local 
+version label (+cpu). MLflow logged a pip requirement for this package as 'torchvision==0.27.1' without the local 
+version label to make it installable from PyPI. To specify pip requirements containing local version labels, please 
+use `conda_env` or `pip_requirements`.
+Chargement DenseNet121 depuis densenet_finetuned.pt...
+Chargement test set ChestMNIST...
+Inference sur 22433 images (CPU)...
+
+-------------------------------------------------------
+  AUC macro       : 0.7122
+  mAP             : 0.1146
+  F1  macro       : 0.1556
+  F1  micro       : 0.1995
+  MCC macro       : 0.1297
+  Balanced Acc    : 0.6398
+-------------------------------------------------------
+Logging vers MLflow...
+Run c4ee90a9c74d43c9a74a4dd0485f7bdb marque comme meilleur modele pour 'classification'.
+
+Run ID : c4ee90a9c74d43c9a74a4dd0485f7bdb
+AUC macro : 0.7122
+F1  macro : 0.1556
+DenseNet MLflow repair -> OK

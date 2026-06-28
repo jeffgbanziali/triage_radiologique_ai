@@ -1,0 +1,36 @@
+﻿Dataset � train: 78468 | val: 11219 | test: 22433
+
+=======================================================
+Mod�le : CNN_from_scratch
+Param�tres : 392,494 total | 392,494 entra�nables
+=======================================================
+Epoch   1/5 | train_loss=1.4288 | val_loss=1.4468 | F1=0.1265 | MCC=0.0920 | 905.4s
+Epoch   2/5 | train_loss=1.3414 | val_loss=1.4284 | F1=0.1284 | MCC=0.1003 | 741.0s
+Epoch   3/5 | train_loss=1.3095 | val_loss=1.4030 | F1=0.1457 | MCC=0.1211 | 770.5s
+Epoch   4/5 | train_loss=1.2859 | val_loss=1.3871 | F1=0.1436 | MCC=0.1284 | 788.0s
+Epoch   5/5 | train_loss=1.2716 | val_loss=1.4375 | F1=0.1534 | MCC=0.1368 | 799.7s
+python.exe : Traceback (most recent call last):
+Au caractère Ligne:1 : 186
++ ... ython.exe"; & $python train_classification.py --model all 2>&1 | Out- ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  File "C:\Users\Pret Jeff\OneDrive - Efrei\Documents\Cours\Machine_learning_and_Deep_learning\Deep Learning 
+project\triage-radiologique\train_classification.py", line 197, in <module>
+    main()
+  File "C:\Users\Pret Jeff\OneDrive - Efrei\Documents\Cours\Machine_learning_and_Deep_learning\Deep Learning 
+project\triage-radiologique\train_classification.py", line 178, in main
+    run_id, auc = train_single_model(
+                  ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Pret Jeff\OneDrive - Efrei\Documents\Cours\Machine_learning_and_Deep_learning\Deep Learning 
+project\triage-radiologique\train_classification.py", line 115, in train_single_model
+    history = trainer.fit(
+              ^^^^^^^^^^^^
+  File "C:\Users\Pret Jeff\OneDrive - Efrei\Documents\Cours\Machine_learning_and_Deep_learning\Deep Learning 
+project\triage-radiologique\src\training\trainer.py", line 212, in fit
+    print(f"Meilleur mod�le sauvegard� \u2192 {save_path}")
+  File "C:\Users\Pret Jeff\AppData\Local\Programs\Python\Python311\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2192' in position 27: character maps to <undefined>

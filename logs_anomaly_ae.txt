@@ -1,0 +1,41 @@
+﻿python.exe : 2026/06/27 16:13:26 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+Au caractère Ligne:5 : 1
++ & $python train_anomaly.py --model ae_conv 2>&1 | Out-File -FilePath  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (2026/06/27 16:1...`name` instead.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+2026/06/27 16:13:26 WARNING mlflow.pytorch: Saving pytorch model by Pickle or CloudPickle format requires exercising 
+caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during 
+deserialization. The recommended safe alternative is to set `serialization_format` to 'pt2' to save the PyTorch model 
+using the safe graph model format.
+2026/06/27 16:13:26 WARNING mlflow.utils.requirements_utils: Found torch version (2.12.1+cpu) contains a local version 
+label (+cpu). MLflow logged a pip requirement for this package as 'torch==2.12.1' without the local version label to 
+make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or 
+`pip_requirements`.
+2026/06/27 16:13:43 WARNING mlflow.utils.requirements_utils: Found torch version (2.12.1+cpu) contains a local version 
+label (+cpu). MLflow logged a pip requirement for this package as 'torch==2.12.1' without the local version label to 
+make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or 
+`pip_requirements`.
+Normaux — train: 42405 | val: 6079
+Total   — train: 78468       | test: 22433
+Epoch   1/30 | train_loss=0.00682 | val_loss=0.00377
+Epoch   2/30 | train_loss=0.00394 | val_loss=0.00550
+Epoch   3/30 | train_loss=0.00343 | val_loss=0.00328
+Epoch   4/30 | train_loss=0.00323 | val_loss=0.00288
+Epoch   5/30 | train_loss=0.00314 | val_loss=0.00338
+Epoch   6/30 | train_loss=0.00308 | val_loss=0.00291
+Epoch   7/30 | train_loss=0.00304 | val_loss=0.00301
+Epoch   8/30 | train_loss=0.00301 | val_loss=0.00413
+Epoch   9/30 | train_loss=0.00298 | val_loss=0.00558
+Epoch  10/30 | train_loss=0.00295 | val_loss=0.00298
+Epoch  11/30 | train_loss=0.00295 | val_loss=0.00314
+Early stopping à l'epoch 11.
+Calcul des scores sur le val set normal (calibration seuil)...
+Seuil anomalie (percentile 95%) : 0.005110
+Calcul des scores sur le test set...
+Run 1622001c85c5481bb710e918744ab2dc marque comme meilleur modele pour 'anomaly'.
+
+Run ID MLflow : 1622001c85c5481bb710e918744ab2dc
+Seuil d'anomalie : 0.00511
+Taux d'anomalie (test) : 4.6%

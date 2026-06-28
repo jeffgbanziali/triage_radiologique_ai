@@ -1,0 +1,61 @@
+﻿python.exe : Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher 
+rate limits and faster downloads.
+Au caractère Ligne:5 : 1
++ & $python train_classification.py --model vit 2>&1 | Out-File -FilePa ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Warning: You ar...ster downloads.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a 
+HF_TOKEN to enable higher rate limits and faster downloads.
+C:\Users\Pret Jeff\OneDrive - Efrei\Documents\Cours\Machine_learning_and_Deep_learning\Deep Learning 
+project\triage-radiologique\.venv\Lib\site-packages\huggingface_hub\file_download.py:137: UserWarning: 
+`huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does 
+not support them in C:\Users\Pret Jeff\.cache\huggingface\hub\models--timm--deit_tiny_patch16_224.fb_in1k. Caching 
+files will still work but in a degraded version that might require more space on your disk. This warning can be 
+disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see 
+https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In 
+order to activate developer mode, see this article: 
+https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+2026/06/27 11:42:18 WARNING mlflow.models.model: `artifact_path` is deprecated. Please use `name` instead.
+2026/06/27 11:42:19 WARNING mlflow.pytorch: Saving pytorch model by Pickle or CloudPickle format requires exercising 
+caution because these formats rely on Python's object serialization mechanism, which can execute arbitrary code during 
+deserialization. The recommended safe alternative is to set `serialization_format` to 'pt2' to save the PyTorch model 
+using the safe graph model format.
+2026/06/27 11:42:19 WARNING mlflow.utils.requirements_utils: Found torch version (2.12.1+cpu) contains a local version 
+label (+cpu). MLflow logged a pip requirement for this package as 'torch==2.12.1' without the local version label to 
+make it installable from PyPI. To specify pip requirements containing local version labels, please use `conda_env` or 
+`pip_requirements`.
+Dataset — train: 78468 | val: 11219 | test: 22433
+
+=======================================================
+Modèle : DeiT_tiny_ViT
+Paramètres : 5,492,942 total | 5,492,942 entraînables
+=======================================================
+Epoch   1/5 | train_loss=1.3577 | val_loss=1.4443 | F1=0.1581 | MCC=0.1296 | 825.5s
+Epoch   2/5 | train_loss=1.2809 | val_loss=1.2982 | F1=0.1668 | MCC=0.1508 | 785.6s
+Epoch   3/5 | train_loss=1.2333 | val_loss=1.4028 | F1=0.1754 | MCC=0.1605 | 796.3s
+Epoch   4/5 | train_loss=1.1882 | val_loss=1.3236 | F1=0.1907 | MCC=0.1852 | 801.4s
+Epoch   5/5 | train_loss=1.1506 | val_loss=1.3221 | F1=0.1909 | MCC=0.1828 | 800.4s
+Early stopping déclenché à l'epoch 5.
+Meilleur modele sauvegarde -> data/processed/vit_best.pt
+
+-------------------------------------------------------
+  AUC macro       : 0.7374
+  mAP             : 0.1240
+  F1  macro       : 0.1659
+  F1  micro       : 0.2008
+  MCC macro       : 0.1435
+  Balanced Acc    : 0.6478
+-------------------------------------------------------
+
+Run ID MLflow : 6706f2f0cd5d4ad2abb63ea419ab5c25
+AUC macro (test) : 0.7374
+Run 6706f2f0cd5d4ad2abb63ea419ab5c25 marque comme meilleur modele pour 'classification'.
+
+Meilleur modele : vit (AUC=0.7374)
+
+Résumé des runs :
+  vit             | AUC=0.7374 | run_id=6706f2f0cd5d4ad2abb63ea419ab5c25

@@ -1,0 +1,22 @@
+# Transfer Learning - DenseNet121 pre-entraine sur ImageNet
+
+model: densenet121
+pretrained: true
+
+# Entrainement en 2 phases :
+# Phase 1 : backbone gele, seule la tete est entrainee
+# Phase 2 : fine-tuning de denseblock4 avec un LR reduit
+freeze_backbone_epochs: 3
+unfreeze_layers: denseblock4
+
+# Entrainement
+optimizer: adamw
+lr: 1.0e-3               # LR pour la tete (phase 1)
+unfreeze_lr: 1.0e-4      # LR pour le backbone degele (phase 2)
+weight_decay: 1.0e-4
+scheduler: cosine
+max_epochs: 5
+patience: 3
+
+# Loss
+loss: bce_weighted

@@ -1,0 +1,19 @@
+# Vision Transformer - DeiT-tiny (meilleur modele de classification)
+
+model: deit_tiny_patch16_224
+pretrained: true
+
+# Resolution 64x64 : 16 patchs de 16x16 (timm interpole les positional embeddings)
+img_size: 64
+patch_size: 16
+
+# Entrainement
+optimizer: adamw
+lr: 5.0e-5               # LR faible pour le fine-tuning du ViT pre-entraine
+weight_decay: 1.0e-2
+scheduler: cosine
+max_epochs: 5
+patience: 3
+
+# Loss
+loss: bce_weighted

@@ -1,0 +1,58 @@
+﻿OpenI CSV : 3818 paires image-rapport valides (vues frontales).
+  Prevalence labels : {0: 0.08100000023841858, 1: 0.08699999749660492, 2: 0.039000000804662704, 3: 0.01600000075995922, 4: 0.004000000189989805, 5: 0.02800000086426735, 6: 0.009999999776482582, 7: 0.007000000216066837, 8: 0.007000000216066837, 9: 0.012000000104308128, 10: 0.028999999165534973, 11: 0.006000000052154064, 12: 0.03799999877810478, 13: 0.013000000268220901}
+
+Split — total : 3818 échantillons
+  train  :   2672 (70.0%) | prévalence moy=2.68%
+  val    :    573 (15.0%) | prévalence moy=2.68%
+  test   :    573 (15.0%) | prévalence moy=2.69%
+Epoch   1 | image_only   | train=1.4775 | val=1.4324 | AUC=0.6462
+Epoch   2 | image_only   | train=1.4216 | val=1.4507 | AUC=0.6847
+Epoch   3 | image_only   | train=1.4285 | val=1.5707 | AUC=0.6654
+Epoch   4 | image_only   | train=1.4322 | val=1.5390 | AUC=0.6957
+Early stopping à l'epoch 4.
+
+-------------------------------------------------------
+  AUC macro       : 0.6483
+  mAP             : 0.0917
+  F1  macro       : 0.0863
+  F1  micro       : 0.1270
+  MCC macro       : 0.0668
+  Balanced Acc    : 0.5739
+-------------------------------------------------------
+Run ID : 82a4fffb087544be8f750f82bc5fc223 | AUC test : 0.6483
+Epoch   1 | text_only    | train=1.0804 | val=0.7545 | AUC=0.9509
+Epoch   2 | text_only    | train=0.4883 | val=0.6666 | AUC=0.9603
+Epoch   3 | text_only    | train=0.2642 | val=0.6190 | AUC=0.9645
+Epoch   4 | text_only    | train=0.1849 | val=0.6578 | AUC=0.9674
+Epoch   5 | text_only    | train=0.1522 | val=0.7095 | AUC=0.9669
+
+-------------------------------------------------------
+  AUC macro       : 0.9727
+  mAP             : 0.6179
+  F1  macro       : 0.4592
+  F1  micro       : 0.5545
+  MCC macro       : 0.4992
+  Balanced Acc    : 0.8948
+-------------------------------------------------------
+Run ID : 625f73aa4ca74235a2bff478741fd3b7 | AUC test : 0.9727
+Epoch   1 | fusion       | train=0.6382 | val=0.9456 | AUC=0.9477
+Epoch   2 | fusion       | train=0.2710 | val=1.5718 | AUC=0.9550
+Epoch   3 | fusion       | train=0.1710 | val=1.6098 | AUC=0.9607
+Epoch   4 | fusion       | train=0.1332 | val=1.7640 | AUC=0.9583
+Early stopping à l'epoch 4.
+
+-------------------------------------------------------
+  AUC macro       : 0.9662
+  mAP             : 0.5119
+  F1  macro       : 0.3824
+  F1  micro       : 0.4623
+  MCC macro       : 0.4406
+  Balanced Acc    : 0.9044
+-------------------------------------------------------
+Run ID : 165799d5488a4eefba67682fd49b049f | AUC test : 0.9662
+Run 625f73aa4ca74235a2bff478741fd3b7 marque comme meilleur modele pour 'multimodal'.
+
+Résumé multimodal :
+  image_only      | AUC=0.6483
+  text_only       | AUC=0.9727
+  fusion          | AUC=0.9662

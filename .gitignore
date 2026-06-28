@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+*.so
+
+# Environnements virtuels
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Donnees brutes (trop lourdes pour git)
+data/raw/
+data/images/
+
+# Splits (regenerables)
+data/splits/
+
+# Artefacts MLflow locaux
+mlruns/
+
+# Fichiers .pt exclus sauf ceux dans data/processed/ (geres par git lfs)
+*.pth
+*.onnx
+
+# Figures générées
+reports/figures/*.png
+reports/figures/*.pdf
+
+# Variables d'environnement
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+
